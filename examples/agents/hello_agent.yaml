@@ -1,0 +1,10 @@
+# Track 1: minimal Omnigent agent that runs through your Claude Max subscription.
+# The claude-sdk harness shells out to your logged-in Claude Code CLI, so no API key is used.
+# Run from the omnigent-test/ directory:  omnigent run agents/hello_agent.yaml
+name: hello_agent
+prompt: |
+  You are a concise assistant. Answer directly, and ask a follow-up question
+  when the request is ambiguous.
+
+executor:
+  harness: claude-sdk

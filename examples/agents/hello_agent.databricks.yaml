@@ -1,0 +1,16 @@
+# Track 2 (Free Edition friendly): open-source Omnigent pointed at a Databricks
+# Foundation Model serving endpoint. This does NOT need the managed Omnigent preview.
+# Requires:  uv tool install "omnigent[databricks]"  and a Databricks CLI profile named 'free'.
+# IMPORTANT: change the model below to one actually available on your Free Edition
+# Model Serving (run `databricks serving-endpoints list --profile free` to see options).
+# Run from the omnigent-test/ directory:  omnigent run agents/hello_agent.databricks.yaml
+name: hello_agent_databricks
+prompt: |
+  You are a concise assistant.
+
+executor:
+  harness: claude-sdk
+  model: databricks-claude-sonnet-4-6
+  auth:
+    type: databricks
+    profile: free
